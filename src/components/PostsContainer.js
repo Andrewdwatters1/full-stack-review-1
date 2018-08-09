@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import {getPosts} from '../redux/reducers/posts'
 import Posts from './Posts'
+import SinglePost from './SinglePost'
 
 class PostsContainer extends Component {
   
@@ -15,6 +16,7 @@ class PostsContainer extends Component {
     return (
       <Switch>
         <Route exact path="/posts" component={Posts}/>
+        <Route path="/posts/:id" component={SinglePost} />
       </Switch>
     )
   }
