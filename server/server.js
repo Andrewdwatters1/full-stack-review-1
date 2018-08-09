@@ -3,6 +3,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const massive = require('massive');
 require('dotenv').config();
+const path = require('path') // w/ express static only
 // IMPORT ALL PACKAGES
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false
 }))
+app.use(express.static(`${__dirname}/../build`))     // this is only for production
 // DEFINE MIDDLEWARE
 
 app.get(`/auth/callback`, ac.auth);
@@ -39,7 +41,13 @@ app.post(`/api/posts`, pc.create);
 // DEFINE ENDPTS
 
 
-
+// app.get('/*', function(req, res) { // ******This is only used w/ express static
+//   res.sendFile(path.join(__dirname, '../build/index.html'), function(err) {
+//     if (err) {
+//       res.status(500).send(err)
+//     }
+//   })
+// })
 
 app.listen(port, () => {
   console.log('We are live boys and girls! Port =======> ', port);

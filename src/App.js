@@ -27,8 +27,8 @@ class App extends Component {
 
 
           </Switch>
-        </div>
-      </HashRouter>
+        </div> 
+      </HashRouter> 
     );
   }
 }
