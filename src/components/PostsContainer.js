@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 
 import {getPosts} from '../redux/reducers/posts'
+import Posts from './Posts'
 
 class PostsContainer extends Component {
   
@@ -11,9 +13,9 @@ class PostsContainer extends Component {
   
   render() {
     return (
-      <div>
-        Posts Container
-      </div>
+      <Switch>
+        <Route exact path="/posts" component={Posts}/>
+      </Switch>
     )
   }
 }

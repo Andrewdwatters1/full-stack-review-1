@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const GET_USER = 'GET_USER'
-const GET_USER_FILFILLED = 'GET_USER_FULFILLED'
+const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
 
 let initialState = {
   data: null
@@ -9,7 +9,7 @@ let initialState = {
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
-    case GET_USER_FILFILLED:  
+    case GET_USER_FULFILLED:  
       return {...state, data: action.payload.data}
     // case value:
     //   return or break
