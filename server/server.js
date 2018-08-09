@@ -16,7 +16,7 @@ massive(process.env.CONNECTION_STRING).then(db => {
   app.set('db', db)
   console.log('We is hooked up to the database broniez!');
 })
-// USE MASSIVE TO CONNECT W/ DB
+// MASSIVE CONNECTS TO DB
 
 app.use(bodyParser.json());
 app.use(session({
